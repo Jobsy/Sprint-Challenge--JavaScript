@@ -8,7 +8,7 @@
 */
 
 function consume(para1, para2, cb) {
-  cb(para1, para2);
+  return cb(para1, para2);
 };
 
 /* Step 2: Create several functions to callback with consume();

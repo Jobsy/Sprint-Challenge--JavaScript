@@ -126,11 +126,14 @@ const zooAnimals = [{"animal_name":"Jackal, asiatic","population":5,"scientific_
 The zoo wants to display both the scientific name and the animal name in front of the habitats.  Return an array with only the animal and scientific names in it.  The individual values in the array should look like this "Name: Jackal, asiatic, Scientific: Canis aureus."
 
 */
+
 const animalNames = [];
 zooAnimals.forEach(function(elem, i, arr) {
   animalNames.push(`Name: ${arr[i]["animal_name"]}, Scientific: ${arr[i]["scientific_name"]}.`)
 });
 console.log(animalNames);
+
+
 
 /* Request 2: .map()    
 
@@ -143,6 +146,8 @@ zooAnimals.map(function(elem, i, arr) {
   lowerCase.push(arr[i]["animal_name"].toLocaleLowerCase())
 })
 console.log(lowerCase); 
+
+
 
 /* Request 3: .filter() 
 
@@ -158,6 +163,8 @@ zooAnimals.filter(function(elem, i, arr) {
 })
 console.log(lowerPopulation);
 
+
+
 /* Request 4: .reduce() 
 
 The zoos need to know their total animal population across the United States.  Find the total population from all the zoos using the .reduce() method.
@@ -171,9 +178,52 @@ zooAnimals.reduce(function(total, curEle) {
 console.log(populationTotal);
 
 
+
+
+
 /* 
 
 Stretch: If you haven't already, convert your array method callbacks into arrow functions.
 
 */
 
+////uncomment the session codw below for the stretch solutions
+
+// const animalNames = [];
+
+// let  forEaching = (elem, i, arr) => animalNames.push(`Name: ${arr[i]["animal_name"]}, Scientific: ${arr[i]["scientific_name"]}.`) 
+// zooAnimals.forEach(forEaching);
+// console.log(animalNames);
+
+
+
+// const lowerPopulation = [];
+
+// let filtering = (elem, i, arr) => {
+//   if(arr[i]["population"] < 5) {
+//     lowerPopulation.push(arr[i]["animal_name"]);
+//   }
+//   return lowerPopulation;
+// };
+
+// zooAnimals.filter(filtering);
+// console.log(lowerPopulation);
+
+
+
+// const lowerCase = [];
+
+// let mapping = (elem, i, arr) => lowerCase.push(arr[i]["animal_name"].toLocaleLowerCase());
+// zooAnimals.map(mapping);
+// console.log(lowerCase); 
+
+
+
+// let populationTotal = 0;
+
+// let reducer = (total, curEle) => {
+//   populationTotal = total + curEle["population"];
+//   return populationTotal
+// }
+// zooAnimals.reduce(reducer, 0);
+// console.log(populationTotal);
